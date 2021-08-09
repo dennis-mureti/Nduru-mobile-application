@@ -1,7 +1,6 @@
 import 'dart:convert';
+import 'package:flutter/material.dart';
 
-// import 'package:flutter/foundation.dart';
-import '../models/user.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import 'http_exception.dart';
@@ -23,10 +22,10 @@ class Authentication with ChangeNotifier
 
   var _auth;
 
-
-  Future<void> signUp(String email, String password) async
+  Future<void> signUp(String? email, String? password) async
   {
     const url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAVHqE7u8yppKBrrDBaDWKOYegoP7_xTy0';
+    // const url = 'http://10.0.2.2:8000/api/users/register';
 
     try{
       final response = await http.post(Uri.parse(url), body: json.encode(
@@ -53,9 +52,13 @@ class Authentication with ChangeNotifier
   }
 
 
-  Future <void> logIn(String email, String password) async
+  Future <void> logIn(String? email, String? password, ) async
   {
-    const url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAVHqE7u8yppKBrrDBaDWKOYegoP7_xTy0';
+    // const url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAVHqE7u8yppKBrrDBaDWKOYegoP7_xTy0';
+    // const url = '192.168.0.28:8000/api/users/login';
+    const url =  'http://10.0.2.2:8000/api/users/login';
+
+
 
     try{
 final response = await http.post(Uri.parse(url), body: json.encode(
@@ -89,3 +92,4 @@ final response = await http.post(Uri.parse(url), body: json.encode(
   }
 
 }
+

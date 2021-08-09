@@ -7,7 +7,7 @@ import '../models/authentication.dart';
 
 class LoginScreen extends StatefulWidget {
 
-  static const routeName = '/login';
+  static const routeName = '/0';
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -50,11 +50,11 @@ class _LoginScreenState extends State<LoginScreen> {
     _formKey.currentState!.save();
 
     try{
-      // await Provider.of<Authentication>(context, listen: false).logIn(
-      //     _authData['email'], 
-      //     _authData['password']
-      // );
-
+      await Provider.of<Authentication>(context, listen: false).logIn(
+          _authData['email'], 
+          _authData['password']
+      );
+ 
       Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
 
     } catch(error)
@@ -91,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
               gradient: LinearGradient(
                 colors: [
                   Colors.lightBlueAccent,
-                  Colors.red
+                  Colors.red.shade800
                 ]
               )
             )

@@ -50,10 +50,10 @@ class _SignupScreenState extends State<SignupScreen> {
     _formKey.currentState!.save();
 
     try{
-      // await Provider.of<Authentication>(context, listen: false).signUp(
-      // _authData['email'], 
-      // _authData['password']
-      // );
+      await Provider.of<Authentication>(context, listen: false).signUp(
+      _authData['email'], 
+      _authData['password']
+      );
 
       Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
 

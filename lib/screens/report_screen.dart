@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nduru_mobile_aplication/widget/navigation_drawer_widget.dart';
+
 
 class ReportScreen extends StatefulWidget {
   const ReportScreen({Key? key}) : super(key: key);
@@ -37,6 +39,7 @@ class _ReportScreenState extends State<ReportScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavigationDrawerWidget(),
       appBar: AppBar(
         title: const Text('Report Incident'),
       ),
@@ -63,7 +66,7 @@ class _ReportScreenState extends State<ReportScreen> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30),
                           ),
-                          color: Colors.redAccent,
+                          color: Colors.red[800],
                           textColor: Colors.white,
                         )
 

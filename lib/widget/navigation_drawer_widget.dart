@@ -4,7 +4,8 @@ import '/screens/home_screen.dart';
 import '/screens/profile_screen.dart';
 import '/screens/user_screen.dart';
 import '/screens/report_screen.dart';
-
+import '/screens/incidents.dart';
+import '/screens/contact_screen.dart';
 
 
 class NavigationDrawerWidget extends StatelessWidget {
@@ -18,7 +19,7 @@ class NavigationDrawerWidget extends StatelessWidget {
 
     return Drawer(
       child: Material(
-        color: Color.fromRGBO(205, 75, 50, 1),
+        color: Color.fromRGBO(180, 75, 50, 1),
         child: ListView(
           padding: padding,
           children: <Widget>[
@@ -60,13 +61,15 @@ class NavigationDrawerWidget extends StatelessWidget {
             buildMenuItem(
               text: 'Reported',
               icon: Icons.report,
-              onClicked: () => selectedItem(context, 2),
+              onClicked: () => selectedItem(context, 3),
             ),
 
             const SizedBox(height:16),
             buildMenuItem(
               text: 'Emergency Contact Persons',
               icon: Icons.phone_in_talk,
+              onClicked: () => selectedItem(context, 4),
+
             ),
 
             const SizedBox(height:16),
@@ -179,6 +182,18 @@ void selectedItem(BuildContext context, int index){
       case 2:
       Navigator.of(context).push(MaterialPageRoute(
         builder: (context) => ReportScreen(),
+      ));
+      break;
+
+      case 3:
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => Incidents(),
+      ));
+      break;
+
+      case 4:
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => ContactScreen(),
       ));
       break;
   }

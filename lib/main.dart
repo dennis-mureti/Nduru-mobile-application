@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         // title: 'Nduru App',
         title: title,
         theme: ThemeData(
-          primaryColor: Colors.red,
+          primaryColor: Colors.red[800],
         ),
         home: LoginScreen(),
         routes: {
